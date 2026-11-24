@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <title>Sixteen</title>
+  <defs>
+    <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A1D22"/>
+      <stop offset="1" stop-color="#0B0C0E"/>
+    </linearGradient>
+    <linearGradient id="halo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4FE3FF"/>
+      <stop offset="0.5" stop-color="#8A7BFF"/>
+      <stop offset="1" stop-color="#FF4FB8"/>
+    </linearGradient>
+    <radialGradient id="cap" cx="0.38" cy="0.32" r="0.8">
+      <stop offset="0" stop-color="#2A2E35"/>
+      <stop offset="1" stop-color="#121417"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="ledglow" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+  </defs>
+
+  <!-- Anodized plate -->
+  <rect x="8" y="8" width="240" height="240" rx="52" fill="url(#plate)"/>
+  <rect x="8.5" y="8.5" width="239" height="239" rx="51.5" fill="none" stroke="#2A2E34"/>
+
+  <!-- RGB halo around the knob base -->
+  <circle cx="128" cy="128" r="58" fill="none" stroke="url(#halo)" stroke-width="10" opacity="0.55" filter="url(#glow)"/>
+  <circle cx="128" cy="128" r="56" fill="none" stroke="url(#halo)" stroke-width="4"/>
+
+  <!-- Knurled cap -->
+  <circle cx="128" cy="128" r="50" fill="url(#cap)"/>
+  <g stroke="#000" stroke-opacity="0.55" stroke-width="2" stroke-linecap="round">
+    <path d="M128 82v8M128 166v8M82 128h8M166 128h8"/>
+    <path d="M95.5 95.5l5.6 5.6M155 155l5.6 5.6M95.5 160.5l5.6-5.6M155 101.1l5.6-5.6"/>
+  </g>
+  <!-- Pointer aligned with the leading lit LED -->
+  <line x1="142.6" y1="117.4" x2="160.4" y2="104.5" stroke="#F6F8FF" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- 11-LED indicator ring: 270° sweep from bottom-left, 8 lit -->
+  <g fill="#F6F8FF">
+    <g filter="url(#ledglow)" opacity="0.9"><circle cx="72.8" cy="183.2" r="6.5"/><circle cx="53.8" cy="152.1" r="6.5"/><circle cx="51.0" cy="115.8" r="6.5"/><circle cx="64.9" cy="82.2" r="6.5"/><circle cx="92.6" cy="58.5" r="6.5"/><circle cx="128.0" cy="50.0" r="6.5"/><circle cx="163.4" cy="58.5" r="6.5"/><circle cx="191.1" cy="82.2" r="6.5"/></g>
+    <circle cx="72.8" cy="183.2" r="5.5"/><circle cx="53.8" cy="152.1" r="5.5"/><circle cx="51.0" cy="115.8" r="5.5"/><circle cx="64.9" cy="82.2" r="5.5"/><circle cx="92.6" cy="58.5" r="5.5"/><circle cx="128.0" cy="50.0" r="5.5"/><circle cx="163.4" cy="58.5" r="5.5"/><circle cx="191.1" cy="82.2" r="5.5"/>
+  </g>
+  <g fill="#2A2E35"><circle cx="205.0" cy="115.8" r="5.5"/><circle cx="202.2" cy="152.1" r="5.5"/><circle cx="183.2" cy="183.2" r="5.5"/></g>
+</svg>
